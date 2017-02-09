@@ -1,0 +1,33 @@
+page-detail-view {
+
+	@media screen and (orientation:portrait) {
+		.carouselImage {
+			width:100%;
+		}
+
+		.carouselSlide {
+			width: 60%;
+			margin: auto;
+		}
+
+
+	}
+
+	@media screen and (orientation:landscape) {
+
+		.carouselSlide {
+			width: 50%;
+			margin: auto;
+			display: inline-block;
+		}
+	
+		.detailContainer {
+			width: 40%;
+			display: inline-block;
+			float: right;
+			
+		}
+
+	}	
+
+}

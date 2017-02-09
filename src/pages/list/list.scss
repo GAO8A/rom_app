@@ -1,0 +1,13 @@
+page-list {
+
+	ion-content{
+		justify-content: space-between;
+		flex-wrap:nowrap;
+	}
+
+	ion-card.galleryCard {
+		width: 32%;
+		flex: 1;
+	}
+
+}

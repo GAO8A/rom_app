@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedMineral">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{selectedMineral.Name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-tabs>
+  <ion-tab tabTitle="Details" [root]="detailViewTab" [rootParams]="selectedMineral"></ion-tab>
+  <ion-tab tabTitle="Map" [root]="mapViewTab" [rootParams]="selectedMineral"></ion-tab>
+</ion-tabs>

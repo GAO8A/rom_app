@@ -1,0 +1,48 @@
+<!--
+  Generated template for the DetailView page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-card *ngIf="selectedMineral">
+
+  <ion-card-content>
+    
+<ion-slides pager class="carouselSlide" loop="true">
+
+  <ion-slide *ngFor="let mineral of images">
+    <img class="carouselImage"src="assets/img/{{selectedMineral.minID}}{{picLetter[images[mineral]]}}-or8.png"/>
+  </ion-slide>
+
+</ion-slides>
+  <div class="detailContainer">
+    <ion-card-title>
+      <strong>{{selectedMineral.Name}}</strong>
+      <h5><i>{{selectedMineral.Family}}  ({{selectedMineral.Formula}})</i></h5>
+    </ion-card-title>
+
+    <h2>Habit</h2>
+    <p>
+      {{selectedMineral.Habit}}
+    </p>
+    <h2>Etymology</h2>
+    <p>
+      {{selectedMineral.Etym}}
+    </p>
+    </div>
+
+
+  </ion-card-content>
+</ion-card>
+
+</ion-content>

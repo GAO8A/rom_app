@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Mineral List View</ion-title>
+    <ion-buttons end>
+    <button ion-button icon-only (click)="presentPopover($event)" >
+      <ion-icon name="more"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<ion-searchbar (ionInput)="getMinerals($event)"></ion-searchbar>
+  
+
+
+  <ion-list *ngIf="viewMode ==='list'">
+    <button ion-item *ngFor="let mineral of mineralList" (click)="mineralTapped($event, mineral)">
+      <ion-thumbnail item-left>
+        <img src="assets/img/{{mineral.minID}}-or8.png">
+      </ion-thumbnail>
+      <div class="item-note" item-right>
+        {{mineral.Name}}
+      </div>
+    </button>
+  </ion-list>
+
+
+
+<ion-grid *ngIf="viewMode === 'gallery'">
+  <ion-row *ngFor="let row of mineralList" wrap>
+  <ion-col width-33 *ngFor="let mineral of row">
+
+    <ion-card (click)="mineralTapped($event, mineral)">
+    <ion-card-content>
+
+      <ion-thumbnail>
+        <img src="assets/img/{{mineral.minID}}-or8.png">
+      </ion-thumbnail>
+      
+    </ion-card-content>
+    </ion-card>
+    
+  </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+
+
+
+
+
+</ion-content>
