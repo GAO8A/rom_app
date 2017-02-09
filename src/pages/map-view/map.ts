@@ -67,8 +67,8 @@ export class MapPage {
 
     let svg = d3.select("svg");
 
-    let width = svg.property("width");
-    let height = svg.property("height");
+    // let width = svg.property("width");
+    // let height = svg.property("height");
 
     let projection = d3.geoMercator();
 

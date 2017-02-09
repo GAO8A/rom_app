@@ -6,7 +6,8 @@ import { MainMenuPage,
          ListPage,
          ListPopoverPage,
          MapPage,
-         DetailViewPage} from '../pages/pages';
+         DetailViewPage,
+         FavouritesPage} from '../pages/pages';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { MineralService,
          WorldmapService } from '../providers/providers';
@@ -25,7 +26,8 @@ const cloudSettings: CloudSettings = {
     ListPage,
     ListPopoverPage,
     MapPage,
-    DetailViewPage
+    DetailViewPage,
+    FavouritesPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -39,7 +41,8 @@ const cloudSettings: CloudSettings = {
     ListPage,
     ListPopoverPage,
     MapPage,
-    DetailViewPage
+    DetailViewPage,
+    FavouritesPage
   ],
   providers: [ MineralService, WorldmapService,
   {provide: ErrorHandler, useClass: IonicErrorHandler}

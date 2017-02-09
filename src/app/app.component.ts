@@ -4,7 +4,7 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { MainMenuPage, ListPage  } from '../pages/pages';
+import { MainMenuPage, ListPage, FavouritesPage  } from '../pages/pages';
 
 
 
@@ -29,7 +29,9 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Main Menu', component: MainMenuPage },
-      { title: 'Mineral List', component: ListPage }
+      { title: 'Mineral List', component: ListPage },
+      { title: 'Favourites', component: FavouritesPage }
+
     ];
   }
 
