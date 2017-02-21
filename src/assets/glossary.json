@@ -1,0 +1,182 @@
+[
+  {
+    "dbID": 1,
+    "term": "Acicular",
+    "defin": "The fragile, needle-like habit of some mineral crystals.",
+    "": ""
+  },
+  {
+    "dbID": 2,
+    "term": "Adamantine",
+    "defin": "Very bright luster, typically found in transparent minerals.",
+    "": ""
+  },
+  {
+    "dbID": 3,
+    "term": "Allochromatism",
+    "defin": "A range of colours in minerals caused by the presence of foreign elements.",
+    "": ""
+  },
+  {
+    "dbID": 4,
+    "term": "Arborescent",
+    "defin": "The treelike habit of some mineral crystals, with branches spreading in one or more directions.",
+    "": ""
+  },
+  {
+    "dbID": 5,
+    "term": "Conchoidal",
+    "defin": "A type of fracture resulting in smoothly curved concentric rings around the stress point, generating a shell-like appearance. Quartz is an example of a mineral with conchoidal fracture.",
+    "": ""
+  },
+  {
+    "dbID": 6,
+    "term": "Cleavage",
+    "defin": "A plane of structural weakness at the atomic level, along which a mineral is likely to split smoothly.",
+    "": ""
+  },
+  {
+    "dbID": 7,
+    "term": "Crystal habit",
+    "defin": "The favoured growth pattern of the crystal of a mineral, both individually and in aggregate.",
+    "": ""
+  },
+  {
+    "dbID": 8,
+    "term": "Fracture",
+    "defin": "The non-directional characteristic mark left when a mineral chips or breaks.",
+    "": ""
+  },
+  {
+    "dbID": 9,
+    "term": "Gangue",
+    "defin": "Commercially worthless rock surrounding or closely mixed with an economically important mineral in an ore deposit.",
+    "": ""
+  },
+  {
+    "dbID": 10,
+    "term": "Granite",
+    "defin": "A common type of intrusive felsic igneous rock with a medium to course-grained texture, comprising quartz, plagioclase feldspar and alkali feldspar.",
+    "": ""
+  },
+  {
+    "dbID": 11,
+    "term": "Hackly",
+    "defin": "A fractured surface with multiple small, sharp, jagged irregularities.",
+    "": ""
+  },
+  {
+    "dbID": 12,
+    "term": "Hydrothermal",
+    "defin": "Pertains to the circulation of hot aqueous fluids or gases within Earth's crust.",
+    "": ""
+  },
+  {
+    "dbID": 13,
+    "term": "Idiochromatic",
+    "defin": "Refers to a mineral color derived directly from the presence of one or more elements.",
+    "": ""
+  },
+  {
+    "dbID": 14,
+    "term": "Iridescence",
+    "defin": "A rainbow of colors caused by the interference of light in thin films of different refractive indices and varying thicknesses.",
+    "": ""
+  },
+  {
+    "dbID": 15,
+    "term": "Luster",
+    "defin": "Thee overall sheen of a mineral, caused by the quantity and quality of light reflected from its exterior surface.",
+    "": ""
+  },
+  {
+    "dbID": 16,
+    "term": "Malleable",
+    "defin": "Describes a mineral that can easily be hammered into thin sheets.",
+    "": ""
+  },
+  {
+    "dbID": 17,
+    "term": "Metallic",
+    "defin": "A mineral luster that is opaque and very reflective because of a high absorptive index.",
+    "": ""
+  },
+  {
+    "dbID": 18,
+    "term": "Non-metallic",
+    "defin": "A type of luster that causes a mineral to look not at all like a metal.",
+    "": ""
+  },
+  {
+    "dbID": 19,
+    "term": "Opalescence",
+    "defin": "An opal-like play of light in which reflections off the mineral produce flashes of different colors.",
+    "": ""
+  },
+  {
+    "dbID": 20,
+    "term": "Pegmatite",
+    "defin": "A coarse-grained igneous rock with interlocking grains of about 2.5 cm or larger.",
+    "": ""
+  },
+  {
+    "dbID": 21,
+    "term": "Pelitic",
+    "defin": "Describes sedimentary rock composed of fine fragments such as clay or mud.",
+    "": ""
+  },
+  {
+    "dbID": 22,
+    "term": "Rhyolite",
+    "defin": "An extrusive igneous rock of felsic composition typically comprised of quartz, alkali feldspar and plagioclase. It can have a variety of textures and ranges from fine- to coarse-grained, depending on its cooling rate.",
+    "": ""
+  },
+  {
+    "dbID": 23,
+    "term": "Sectile",
+    "defin": "Describes a mineral that can easily be cut with a knife.",
+    "": ""
+  },
+  {
+    "dbID": 24,
+    "term": "Space group",
+    "defin": "In crystallography, describes the symmetry of the crystal; can be one of 230 types.",
+    "": ""
+  },
+  {
+    "dbID": 25,
+    "term": "Streak",
+    "defin": "The color of the powder left after a mineral has been rubbed across unglazed porcelain.",
+    "": ""
+  },
+  {
+    "dbID": 26,
+    "term": "Striation",
+    "defin": "Shallow parallel grooves or lines along flat crystal faces.",
+    "": ""
+  },
+  {
+    "dbID": 27,
+    "term": "Subconchoidal",
+    "defin": "A type of mineral fracture that falls somewhere between conchoidal and even; the broken surface is smooth, with irregularly rounded corners.",
+    "": ""
+  },
+  {
+    "dbID": 28,
+    "term": "Submetallic",
+    "defin": "A luster that has the look of a metal dulled by weathering or corrosion, typically on opaque minerals.",
+    "": ""
+  },
+  {
+    "dbID": 29,
+    "term": "Tenacity",
+    "defin": "A mineral's resistance to breaking, bending or otherwise being deformed.",
+    "": ""
+  },
+  {
+    "dbID": 30,
+    "term": "Tri-State Mining District",
+    "defin": "A historic mining district in southwest Missouri, southeast Kansas and northeast Oklahoma. It is one of the major lead and zinc mining areas in the world and has produced a variety of exemplary mineral specimens.",
+    "": ""
+  }
+]
