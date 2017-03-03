@@ -1,8 +1,29 @@
+
+.ios, .md {
+
 page-map {
 
-path {
-  fill: #ccc;
-  stroke: #fff;
-}	
+// path {
+//   fill: #ccc;
+//   stroke: #fff;
+// }	
+
+
+// .scroll-content {
+//       height: 100%
+//     }
+ 
+    #map {
+      width: 480px;
+      height: 300px;
+      display: inline-block;
+      padding: 30px;
+    }
+
+    .detailContainer{
+    	display: inline-block;
+    	padding: 30px;
+    }
+}
 
 }

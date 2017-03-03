@@ -1,7 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild} from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { WorldmapService } from '../../providers/providers';
+import { ConnectivityService } from '../../providers/providers';
 import * as d3 from 'd3';
+import { Geolocation } from 'ionic-native';
+
+declare var google;
+// in lieu of typings
 
 /*
   Generated class for the Map page.
@@ -16,6 +21,12 @@ import * as d3 from 'd3';
 })
 export class MapPage {
 
+  @ViewChild('map') mapElement: ElementRef;
+
+  map: any;
+  mapInitialised: boolean = false;
+  apiKey: string = "AIzaSyAGtDag-zU-Lfat_Lvcg2d_HtE2O8PO_EA";
+
   worldmapJson: any;
   selectedMineral: any;
   mineralLocalities: any;
@@ -27,77 +38,122 @@ export class MapPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public worldmapService: WorldmapService,
-              public loadingCtrl: LoadingController) {
+              public loadingCtrl: LoadingController,
+              public connectivityService: ConnectivityService) {
     
     this.selectedMineral = this.navParams.data;
+
+    this.loadGoogleMaps();
          
  
   }
 
-  parseLocations(){
-    this.mineralLocalities = this.selectedMineral["Notable Localities"].split(';');
-    console.log(this.selectedMineral);
-    //console.log(this.mineralLocalities);
 
+
+loadGoogleMaps(){
+ 
+    this.addConnectivityListeners();
+ 
+  if(typeof google == "undefined" || typeof google.maps == "undefined"){
+ 
+    console.log("Google maps JavaScript needs to be loaded.");
+    this.disableMap();
+ 
+    if(this.connectivityService.isOnline()){
+      console.log("online, loading map");
+ 
+      //Load the SDK
+      window['mapInit'] = () => {
+        this.initMap();
+        this.enableMap();
+      }
+ 
+      let script = document.createElement("script");
+      script.id = "googleMaps";
+ 
+      if(this.apiKey){
+        script.src = 'http://maps.google.com/maps/api/js?key=' + this.apiKey + '&callback=mapInit';
+      } else {
+        script.src = 'http://maps.google.com/maps/api/js?callback=mapInit';       
+      }
+ 
+      document.body.appendChild(script);  
+ 
+    } 
   }
-
-
-
-
-  loadworldmap(){
-      this.worldmapService.loadGeoJson().then(data=>{
-
-        this.worldmapJson = data.features;
-        this.createMap();
-        //console.log("notable localities ", this.selectedMineral["Notable Localities"])
-        this.parseLocations();
-
-      }, (error) => {
-        console.error(error);
-      });   
+  else {
+ 
+    if(this.connectivityService.isOnline()){
+      console.log("showing map");
+      this.initMap();
+      this.enableMap();
+    }
+    else {
+      console.log("disabling map");
+      this.disableMap();
+    }
+ 
   }
-
-  addPoints(map,projection){
-
-
-
+ 
   }
-
-  createMap(){
-
-    let svg = d3.select("svg");
-
-    // let width = svg.property("width");
-    // let height = svg.property("height");
-
-    let projection = d3.geoMercator();
-
-    let path = d3.geoPath()
-    .projection(projection);
-
-    
-
-    svg.selectAll("path")
-       .data(this.worldmapJson)
-       .enter().append("path")
-       .attr("d", path);
-
-    svg.selectAll("circle")
-    .data([this.aa,this.bb]).enter()
-    .append("circle")
-    .attr("cx", function (d) { console.log(projection(d)); return projection(d)[0]; })
-    .attr("cy", function (d) { return projection(d)[1]; })
-    .attr("r", "8px")
-    .attr("fill", "red")
-     
+ 
+  initMap(){
+ 
+    this.mapInitialised = true;
+ 
+    Geolocation.getCurrentPosition().then((position) => {
+ 
+      let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+ 
+      let mapOptions = {
+        center: latLng,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+ 
+      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+ 
+    });
+ 
   }
-
-
-  ionViewDidEnter(){
-    
-     this.loadworldmap();
-   
-   }
+ 
+  disableMap(){
+    console.log("disable map");
+  }
+ 
+  enableMap(){
+    console.log("enable map");
+  }
+ 
+  addConnectivityListeners(){
+ 
+    let onOnline = () => {
+ 
+      setTimeout(() => {
+        if(typeof google == "undefined" || typeof google.maps == "undefined"){
+ 
+          this.loadGoogleMaps();
+ 
+        } else {
+ 
+          if(!this.mapInitialised){
+            this.initMap();
+          }
+ 
+          this.enableMap();
+        }
+      }, 2000);
+ 
+    };
+ 
+    let onOffline = () => {
+      this.disableMap();
+    };
+ 
+    document.addEventListener('online', onOnline, false);
+    document.addEventListener('offline', onOffline, false);
+ 
+  }
 
 
 

@@ -11,7 +11,8 @@ import { MainMenuPage,
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { MineralService,
          GlossaryService,
-         WorldmapService } from '../providers/providers';
+         WorldmapService,
+         ConnectivityService } from '../providers/providers';
 import { GlossaryPipe } from '../pipes/glossary.pipe';
 
 const cloudSettings: CloudSettings = {
@@ -47,7 +48,7 @@ const cloudSettings: CloudSettings = {
     DetailViewPage,
     FavouritesPage
   ],
-  providers: [ MineralService, WorldmapService, GlossaryService,
+  providers: [ MineralService, WorldmapService, GlossaryService, ConnectivityService,
   {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
